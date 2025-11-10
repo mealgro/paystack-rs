@@ -1,5 +1,6 @@
 use std::fmt;
 
+use derive_builder::Builder;
 use serde::{Deserialize, Serialize};
 
 use crate::{Authorization, Domain};
@@ -43,4 +44,36 @@ impl fmt::Display for SubscriptionStatus {
         };
         write!(f, "{status}")
     }
+}
+
+/// This struct is used to create a subscription body for creating a subscription using the Paystack API.
+/// This struct is built using the `CreateSubscriptionRequestBuilder` struct.
+#[derive(Clone, Default, Debug, Serialize, Builder)]
+pub struct CreateSubscriptionRequest {
+    /// Plan code for the subscription
+    pub plan: String,
+    /// Customer's email address or code
+    pub customer: String,
+    // optional parameters from here on
+    pub authorization: Option<String>,
+    /// start date of the subscription.
+    pub start_date: Option<String>,
+}
+
+/// This struct is used to create a subscription body for creating a subscription using the Paystack API.
+/// This struct is built using the `FetchSubscriptionRequestBuilder` struct.
+#[derive(Clone, Default, Debug, Serialize, Builder)]
+pub struct FetchSubscriptionRequest {
+    pub page: Option<u32>,
+    pub per_page: Option<u32>,
+    pub customer: Option<u32>,
+    pub plan: Option<String>,
+}
+
+/// This struct is used to create a subscription body for creating a subscription using the Paystack API.
+/// This struct is built using the `UpdateSubscriptionRequestBuilder` struct.
+#[derive(Clone, Default, Debug, Serialize, Builder)]
+pub struct UpdateSubscriptionRequest {
+    pub token: String,
+    pub code: String,
 }

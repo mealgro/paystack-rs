@@ -116,6 +116,8 @@ pub struct TransactionStatusData {
     pub customer: CustomerResponseData,
     /// Transaction authorization data.
     pub authorization: Authorization,
+    /// Transaction plan.
+    pub plan: Option<String>,
 }
 
 /// This struct represents the transaction timeline data.

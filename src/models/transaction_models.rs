@@ -109,7 +109,7 @@ pub struct TransactionStatusData {
     /// IP address of the computers the Transaction has passed through.
     pub ip_address: Option<String>,
     /// Meta data associated with the Transaction.
-    pub metadata: Option<String>,
+    pub metadata: Option<serde_json::Value>,
     /// Transaction fees to override the default fees specified in the integration.
     pub fees: Option<i32>,
     /// Transaction customer data.

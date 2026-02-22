@@ -39,4 +39,6 @@ pub enum PaystackAPIError {
     Plan(String),
     #[error("Subscription Error: {0}")]
     Subscription(String),
+    #[error("Refund Error: {0}")]
+    Refund(String),
 }

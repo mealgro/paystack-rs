@@ -1,5 +1,6 @@
 pub mod apple_pay;
 pub mod charge;
+pub mod refund;
 pub mod customer;
 pub mod dedicated_virtual_account;
 pub mod helpers;

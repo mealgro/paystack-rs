@@ -30,7 +30,7 @@ The client currently covers the following section of the API, and the sections t
 - [ ] Integration
 - [ ] Charge
 - [ ] Disputes
-- [ ] Refunds
+- [x] Refunds
 - [ ] Verifications
 - [ ] Miscellaneous
 
